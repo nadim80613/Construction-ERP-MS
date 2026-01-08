@@ -1,0 +1,1 @@
+﻿INSERT INTO Companies (CompanyID, Name, Address, TaxID) values (1,'SYSTEM', 'N/A', 'N/A');
