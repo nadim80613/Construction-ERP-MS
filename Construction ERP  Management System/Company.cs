@@ -41,7 +41,7 @@ namespace Construction_ERP__Management_System
                 MessageBox.Show("ShowAll Error:\n" + ex.Message);
             }
 
-            return dt; 
+            return dt;
         }
 
         public bool Insert(Company c)
@@ -88,7 +88,7 @@ namespace Construction_ERP__Management_System
 
         }
 
-        public bool update (Company c)
+        public bool Update(Company c)
         {
             bool isSuccess = false;
             try
@@ -126,7 +126,43 @@ namespace Construction_ERP__Management_System
             return isSuccess;
         }
 
+        public bool Delete(Company c)
+        {
+            bool isSuccess = false;
+
+            using (SqlConnection con = DbConnection.GetConnection())
+            {
+                con.Open();
+                try
+                {
+                    string q = @"DELETE FROM Companies WHERE CompanyID=@CompanyID";
+
+                    using (SqlCommand cmd = new SqlCommand(q, con))
+                    {
+                        cmd.Parameters.AddWithValue("@CompanyID", c.CompanyID);
+                        int row = cmd.ExecuteNonQuery();
+                        MessageBox.Show("Delete rows" + row);
+                        return row > 0;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Delete Error:/n" + ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    con.Close();
+                }
 
 
+
+                return isSuccess;
+            }
+        }
+
+
+
+        }
     }
-}

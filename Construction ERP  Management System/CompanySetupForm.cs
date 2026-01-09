@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Construction_ERP__Management_System
 {
@@ -20,7 +21,7 @@ namespace Construction_ERP__Management_System
 
 
 
-
+        
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -54,7 +55,7 @@ namespace Construction_ERP__Management_System
         }
 
         Company c = new Company();
-        int selectedCompanyID = 0;
+        private int selectedCompanyID = 0;
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -70,6 +71,8 @@ namespace Construction_ERP__Management_System
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("selectedCompanyID"+ selectedCompanyID);
+
             if (selectedCompanyID == 0)
             {
                 MessageBox.Show("Please select a company to update");
@@ -88,28 +91,86 @@ namespace Construction_ERP__Management_System
             obj.Address = txtCompanyAddress.Text.Trim();
             obj.TaxID = txtTaxID.Text.Trim();
 
-            bool ok = c.update(obj);
+            bool ok = c.Update(obj);
 
             MessageBox.Show(ok ? "Successfully Updated!" : "Update Failed!");
 
             dgvCompanies.DataSource = c.ShowAll();
-            selectedCompanyID = 0;
+            
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            
+            txtCompanyName.Clear();
+            txtCompanyAddress.Clear();
+            txtTaxID.Clear();
         }
 
         private void dgvCompanies_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void dgvCompanies_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
             if (e.RowIndex < 0) return;
 
             selectedCompanyID = Convert.ToInt32(dgvCompanies.Rows[e.RowIndex].Cells["CompanyID"].Value);
+            int row_index = e.RowIndex;
+            txtCompanyName.Text = dgvCompanies.Rows[row_index].Cells[1].Value.ToString();
+            txtCompanyAddress.Text = dgvCompanies.Rows[row_index].Cells[2].Value.ToString();
+            txtTaxID.Text = dgvCompanies.Rows[row_index].Cells[3].Value.ToString();
+            this.Text = "Selected Company ID = " + selectedCompanyID;
+        }
 
-            txtCompanyName.Text = dgvCompanies.Rows[e.RowIndex].Cells["Name"].Value?.ToString();
-            txtCompanyAddress.Text = dgvCompanies.Rows[e.RowIndex].Cells["Address"].Value?.ToString();
-            txtTaxID.Text = dgvCompanies.Rows[e.RowIndex].Cells["TaxID"].Value?.ToString();
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            DataTable dt = c.ShowAll();
+            dgvCompanies.DataSource = dt;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (selectedCompanyID == 0)
+            {
+                MessageBox.Show("Please selecte a company to delete");
+                return;
+            }
+
+            var dr = MessageBox.Show("Delete this company?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dr != DialogResult.Yes)
+            {
+                return;
+            }
+
+            else
+            {
+                Company obj = new Company();
+                obj.CompanyID = selectedCompanyID;
+
+                bool ok = obj.Delete(obj);
+
+                MessageBox.Show(ok ? "Deleted!" : "delete Failed!");
+
+                dgvCompanies.DataSource = obj.ShowAll();
+            }
+
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Company c = new Company();
+            dgvCompanies.DataSource = c.ShowAll();
+
+            dgvCompanies.ClearSelection();
+            dgvCompanies.CurrentCell = null;
+
+            txtCompanyName.Clear();
+            txtCompanyAddress.Clear();
+            txtTaxID.Clear();
+
         }
     }
 }

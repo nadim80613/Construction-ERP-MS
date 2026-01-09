@@ -30,19 +30,20 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.grpCompany = new System.Windows.Forms.GroupBox();
-            this.txtCompanyName = new System.Windows.Forms.TextBox();
-            this.lblCompanyName = new System.Windows.Forms.Label();
-            this.txtCompanyAddress = new System.Windows.Forms.TextBox();
-            this.lblCompanyAddress = new System.Windows.Forms.Label();
+            this.btnAdminLogout = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.txtTaxID = new System.Windows.Forms.TextBox();
             this.lblTaxID = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.txtCompanyAddress = new System.Windows.Forms.TextBox();
+            this.lblCompanyAddress = new System.Windows.Forms.Label();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
+            this.lblCompanyName = new System.Windows.Forms.Label();
             this.dgvCompanies = new System.Windows.Forms.DataGridView();
-            this.btnAdminLogout = new System.Windows.Forms.Button();
+            this.btnShowAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -72,6 +73,7 @@
             // 
             // grpCompany
             // 
+            this.grpCompany.Controls.Add(this.btnShowAll);
             this.grpCompany.Controls.Add(this.btnAdminLogout);
             this.grpCompany.Controls.Add(this.btnRefresh);
             this.grpCompany.Controls.Add(this.btnDelete);
@@ -93,6 +95,112 @@
             this.grpCompany.TabStop = false;
             this.grpCompany.Text = "Company Info";
             // 
+            // btnAdminLogout
+            // 
+            this.btnAdminLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAdminLogout.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminLogout.Location = new System.Drawing.Point(84, 404);
+            this.btnAdminLogout.Name = "btnAdminLogout";
+            this.btnAdminLogout.Size = new System.Drawing.Size(176, 35);
+            this.btnAdminLogout.TabIndex = 16;
+            this.btnAdminLogout.Text = "Log Out";
+            this.btnAdminLogout.UseVisualStyleBackColor = false;
+            this.btnAdminLogout.Click += new System.EventHandler(this.btnAdminLogout_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.LightGreen;
+            this.btnRefresh.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Location = new System.Drawing.Point(233, 325);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 35);
+            this.btnRefresh.TabIndex = 15;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(133, 325);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 35);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Aqua;
+            this.btnClear.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(26, 246);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 35);
+            this.btnClear.TabIndex = 13;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.LightGreen;
+            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(233, 246);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 35);
+            this.btnUpdate.TabIndex = 12;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.LightGreen;
+            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(133, 246);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 35);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtTaxID
+            // 
+            this.txtTaxID.Location = new System.Drawing.Point(123, 146);
+            this.txtTaxID.Name = "txtTaxID";
+            this.txtTaxID.Size = new System.Drawing.Size(165, 29);
+            this.txtTaxID.TabIndex = 10;
+            // 
+            // lblTaxID
+            // 
+            this.lblTaxID.AutoSize = true;
+            this.lblTaxID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaxID.Location = new System.Drawing.Point(40, 151);
+            this.lblTaxID.Name = "lblTaxID";
+            this.lblTaxID.Size = new System.Drawing.Size(61, 19);
+            this.lblTaxID.TabIndex = 9;
+            this.lblTaxID.Text = "TaxID :";
+            // 
+            // txtCompanyAddress
+            // 
+            this.txtCompanyAddress.Location = new System.Drawing.Point(123, 101);
+            this.txtCompanyAddress.Name = "txtCompanyAddress";
+            this.txtCompanyAddress.Size = new System.Drawing.Size(165, 29);
+            this.txtCompanyAddress.TabIndex = 8;
+            // 
+            // lblCompanyAddress
+            // 
+            this.lblCompanyAddress.AutoSize = true;
+            this.lblCompanyAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyAddress.Location = new System.Drawing.Point(28, 106);
+            this.lblCompanyAddress.Name = "lblCompanyAddress";
+            this.lblCompanyAddress.Size = new System.Drawing.Size(73, 19);
+            this.lblCompanyAddress.TabIndex = 7;
+            this.lblCompanyAddress.Text = "Address :";
+            // 
             // txtCompanyName
             // 
             this.txtCompanyName.Location = new System.Drawing.Point(123, 56);
@@ -112,102 +220,8 @@
             this.lblCompanyName.Text = "Name :";
             this.lblCompanyName.Click += new System.EventHandler(this.lblFullName_Click);
             // 
-            // txtCompanyAddress
-            // 
-            this.txtCompanyAddress.Location = new System.Drawing.Point(123, 101);
-            this.txtCompanyAddress.Name = "txtCompanyAddress";
-            this.txtCompanyAddress.Size = new System.Drawing.Size(165, 29);
-            this.txtCompanyAddress.TabIndex = 8;
-            // 
-            // lblCompanyAddress
-            // 
-            this.lblCompanyAddress.AutoSize = true;
-            this.lblCompanyAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanyAddress.Location = new System.Drawing.Point(28, 106);
-            this.lblCompanyAddress.Name = "lblCompanyAddress";
-            this.lblCompanyAddress.Size = new System.Drawing.Size(73, 19);
-            this.lblCompanyAddress.TabIndex = 7;
-            this.lblCompanyAddress.Text = "Address :";
-            // 
-            // txtTaxID
-            // 
-            this.txtTaxID.Location = new System.Drawing.Point(123, 146);
-            this.txtTaxID.Name = "txtTaxID";
-            this.txtTaxID.Size = new System.Drawing.Size(165, 29);
-            this.txtTaxID.TabIndex = 10;
-            // 
-            // lblTaxID
-            // 
-            this.lblTaxID.AutoSize = true;
-            this.lblTaxID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTaxID.Location = new System.Drawing.Point(40, 151);
-            this.lblTaxID.Name = "lblTaxID";
-            this.lblTaxID.Size = new System.Drawing.Size(61, 19);
-            this.lblTaxID.TabIndex = 9;
-            this.lblTaxID.Text = "TaxID :";
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.LightGreen;
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(133, 246);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 35);
-            this.btnSave.TabIndex = 11;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.LightGreen;
-            this.btnUpdate.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(232, 246);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 35);
-            this.btnUpdate.TabIndex = 12;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.Aqua;
-            this.btnClear.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(26, 246);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 35);
-            this.btnClear.TabIndex = 13;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(73, 325);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 35);
-            this.btnDelete.TabIndex = 14;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.LightGreen;
-            this.btnRefresh.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(185, 325);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 35);
-            this.btnRefresh.TabIndex = 15;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            // 
             // dgvCompanies
             // 
-            this.dgvCompanies.AllowUserToAddRows = false;
-            this.dgvCompanies.AllowUserToDeleteRows = false;
             this.dgvCompanies.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCompanies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompanies.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -216,18 +230,19 @@
             this.dgvCompanies.Size = new System.Drawing.Size(537, 503);
             this.dgvCompanies.TabIndex = 0;
             this.dgvCompanies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompanies_CellContentClick);
+            this.dgvCompanies.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCompanies_CellMouseClick);
             // 
-            // btnAdminLogout
+            // btnShowAll
             // 
-            this.btnAdminLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAdminLogout.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminLogout.Location = new System.Drawing.Point(84, 404);
-            this.btnAdminLogout.Name = "btnAdminLogout";
-            this.btnAdminLogout.Size = new System.Drawing.Size(176, 35);
-            this.btnAdminLogout.TabIndex = 16;
-            this.btnAdminLogout.Text = "Log Out";
-            this.btnAdminLogout.UseVisualStyleBackColor = false;
-            this.btnAdminLogout.Click += new System.EventHandler(this.btnAdminLogout_Click);
+            this.btnShowAll.BackColor = System.Drawing.Color.Ivory;
+            this.btnShowAll.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAll.Location = new System.Drawing.Point(26, 325);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(75, 35);
+            this.btnShowAll.TabIndex = 17;
+            this.btnShowAll.Text = "ShowAll";
+            this.btnShowAll.UseVisualStyleBackColor = false;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // frmCompanySetup
             // 
@@ -267,5 +282,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView dgvCompanies;
         private System.Windows.Forms.Button btnAdminLogout;
+        private System.Windows.Forms.Button btnShowAll;
     }
 }
