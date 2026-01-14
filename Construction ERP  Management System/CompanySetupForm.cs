@@ -172,5 +172,11 @@ namespace Construction_ERP__Management_System
             txtTaxID.Clear();
 
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            frmMain fm = new frmMain();
+            this.Hide();
+        }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.grpCompany = new System.Windows.Forms.GroupBox();
+            this.btnShowAll = new System.Windows.Forms.Button();
             this.btnAdminLogout = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -43,7 +44,7 @@
             this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.dgvCompanies = new System.Windows.Forms.DataGridView();
-            this.btnShowAll = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             // grpCompany
             // 
+            this.grpCompany.Controls.Add(this.btnBack);
             this.grpCompany.Controls.Add(this.btnShowAll);
             this.grpCompany.Controls.Add(this.btnAdminLogout);
             this.grpCompany.Controls.Add(this.btnRefresh);
@@ -95,11 +97,23 @@
             this.grpCompany.TabStop = false;
             this.grpCompany.Text = "Company Info";
             // 
+            // btnShowAll
+            // 
+            this.btnShowAll.BackColor = System.Drawing.Color.Ivory;
+            this.btnShowAll.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAll.Location = new System.Drawing.Point(26, 325);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(75, 35);
+            this.btnShowAll.TabIndex = 17;
+            this.btnShowAll.Text = "ShowAll";
+            this.btnShowAll.UseVisualStyleBackColor = false;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
+            // 
             // btnAdminLogout
             // 
             this.btnAdminLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnAdminLogout.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminLogout.Location = new System.Drawing.Point(84, 404);
+            this.btnAdminLogout.Location = new System.Drawing.Point(74, 456);
             this.btnAdminLogout.Name = "btnAdminLogout";
             this.btnAdminLogout.Size = new System.Drawing.Size(176, 35);
             this.btnAdminLogout.TabIndex = 16;
@@ -232,17 +246,17 @@
             this.dgvCompanies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompanies_CellContentClick);
             this.dgvCompanies.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCompanies_CellMouseClick);
             // 
-            // btnShowAll
+            // btnBack
             // 
-            this.btnShowAll.BackColor = System.Drawing.Color.Ivory;
-            this.btnShowAll.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowAll.Location = new System.Drawing.Point(26, 325);
-            this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(75, 35);
-            this.btnShowAll.TabIndex = 17;
-            this.btnShowAll.Text = "ShowAll";
-            this.btnShowAll.UseVisualStyleBackColor = false;
-            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
+            this.btnBack.BackColor = System.Drawing.Color.Aqua;
+            this.btnBack.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(133, 402);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 35);
+            this.btnBack.TabIndex = 18;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // frmCompanySetup
             // 
@@ -283,5 +297,6 @@
         private System.Windows.Forms.DataGridView dgvCompanies;
         private System.Windows.Forms.Button btnAdminLogout;
         private System.Windows.Forms.Button btnShowAll;
+        private System.Windows.Forms.Button btnBack;
     }
 }

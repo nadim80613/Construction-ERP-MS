@@ -113,12 +113,16 @@ namespace Construction_ERP__Management_System
 
                 MessageBox.Show("Welcome!" + name);
 
-                if (role == "Admin")
-                {
-                    frmCompanySetup fcs = new frmCompanySetup();
-                    fcs.Show();
-                    this.Hide();
-                }
+                //Session set
+                Session.UserID = Convert.ToInt32(reader["UserID"]);
+                Session.CompanyID = Convert.ToInt32(companyID);
+                Session.UserName = name;
+                Session.Email = email;
+                Session.Role = role;
+
+                frmMain fm = new frmMain();
+                fm.Show();
+                this.Hide();
 
             }
 
