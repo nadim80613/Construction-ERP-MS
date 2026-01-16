@@ -30,7 +30,6 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.grpCompany = new System.Windows.Forms.GroupBox();
-            this.txtCompanyID = new System.Windows.Forms.TextBox();
             this.lblCompanyID = new System.Windows.Forms.Label();
             this.grpUser = new System.Windows.Forms.GroupBox();
             this.chkShowPassword = new System.Windows.Forms.CheckBox();
@@ -44,6 +43,10 @@
             this.lblFullName = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtCompanyID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.grpCompany.SuspendLayout();
             this.grpUser.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +55,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(537, 28);
+            this.lblTitle.Location = new System.Drawing.Point(424, 56);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(277, 26);
@@ -67,17 +70,10 @@
             this.grpCompany.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.grpCompany.Name = "grpCompany";
             this.grpCompany.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.grpCompany.Size = new System.Drawing.Size(874, 125);
+            this.grpCompany.Size = new System.Drawing.Size(874, 86);
             this.grpCompany.TabIndex = 2;
             this.grpCompany.TabStop = false;
             this.grpCompany.Text = "Company Information";
-            // 
-            // txtCompanyID
-            // 
-            this.txtCompanyID.Location = new System.Drawing.Point(294, 39);
-            this.txtCompanyID.Name = "txtCompanyID";
-            this.txtCompanyID.Size = new System.Drawing.Size(368, 29);
-            this.txtCompanyID.TabIndex = 4;
             // 
             // lblCompanyID
             // 
@@ -85,12 +81,15 @@
             this.lblCompanyID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCompanyID.Location = new System.Drawing.Point(153, 44);
             this.lblCompanyID.Name = "lblCompanyID";
-            this.lblCompanyID.Size = new System.Drawing.Size(103, 19);
+            this.lblCompanyID.Size = new System.Drawing.Size(125, 19);
             this.lblCompanyID.TabIndex = 3;
-            this.lblCompanyID.Text = "Company ID :";
+            this.lblCompanyID.Text = "Company Name :";
             // 
             // grpUser
             // 
+            this.grpUser.Controls.Add(this.textBox2);
+            this.grpUser.Controls.Add(this.label1);
+            this.grpUser.Controls.Add(this.comboBox1);
             this.grpUser.Controls.Add(this.chkShowPassword);
             this.grpUser.Controls.Add(this.txtConfirmPassword);
             this.grpUser.Controls.Add(this.lblConfirmPassword);
@@ -100,11 +99,11 @@
             this.grpUser.Controls.Add(this.lblEmail);
             this.grpUser.Controls.Add(this.txtFullName);
             this.grpUser.Controls.Add(this.lblFullName);
-            this.grpUser.Location = new System.Drawing.Point(152, 262);
+            this.grpUser.Location = new System.Drawing.Point(152, 227);
             this.grpUser.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.grpUser.Name = "grpUser";
             this.grpUser.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.grpUser.Size = new System.Drawing.Size(874, 300);
+            this.grpUser.Size = new System.Drawing.Size(874, 348);
             this.grpUser.TabIndex = 9;
             this.grpUser.TabStop = false;
             this.grpUser.Text = "User Information";
@@ -114,7 +113,7 @@
             // 
             this.chkShowPassword.AutoSize = true;
             this.chkShowPassword.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkShowPassword.Location = new System.Drawing.Point(294, 234);
+            this.chkShowPassword.Location = new System.Drawing.Point(294, 274);
             this.chkShowPassword.Name = "chkShowPassword";
             this.chkShowPassword.Size = new System.Drawing.Size(105, 17);
             this.chkShowPassword.TabIndex = 11;
@@ -124,7 +123,7 @@
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(294, 189);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(294, 236);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(368, 29);
             this.txtConfirmPassword.TabIndex = 10;
@@ -134,7 +133,7 @@
             // 
             this.lblConfirmPassword.AutoSize = true;
             this.lblConfirmPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmPassword.Location = new System.Drawing.Point(139, 194);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(139, 240);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(139, 19);
             this.lblConfirmPassword.TabIndex = 9;
@@ -142,7 +141,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(294, 141);
+            this.txtPassword.Location = new System.Drawing.Point(294, 198);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(368, 29);
             this.txtPassword.TabIndex = 8;
@@ -152,7 +151,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(197, 146);
+            this.lblPassword.Location = new System.Drawing.Point(197, 198);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(81, 19);
             this.lblPassword.TabIndex = 7;
@@ -160,7 +159,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(294, 93);
+            this.txtEmail.Location = new System.Drawing.Point(294, 162);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(368, 29);
             this.txtEmail.TabIndex = 6;
@@ -169,7 +168,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(222, 98);
+            this.lblEmail.Location = new System.Drawing.Point(222, 164);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(56, 19);
             this.lblEmail.TabIndex = 5;
@@ -216,11 +215,43 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(679, 39);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 30);
+            this.comboBox1.TabIndex = 4;
+            // 
+            // txtCompanyID
+            // 
+            this.txtCompanyID.Location = new System.Drawing.Point(277, 39);
+            this.txtCompanyID.Name = "txtCompanyID";
+            this.txtCompanyID.Size = new System.Drawing.Size(374, 29);
+            this.txtCompanyID.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(202, 115);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 19);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Address :";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(294, 110);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(368, 29);
+            this.textBox2.TabIndex = 13;
+            // 
             // frmSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1114, 672);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnRegister);
@@ -244,7 +275,6 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.GroupBox grpCompany;
-        private System.Windows.Forms.TextBox txtCompanyID;
         private System.Windows.Forms.Label lblCompanyID;
         private System.Windows.Forms.GroupBox grpUser;
         private System.Windows.Forms.TextBox txtPassword;
@@ -258,5 +288,9 @@
         private System.Windows.Forms.CheckBox chkShowPassword;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.TextBox txtCompanyID;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
     }
 }

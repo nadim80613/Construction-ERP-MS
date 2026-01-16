@@ -138,6 +138,10 @@ namespace Construction_ERP__Management_System
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

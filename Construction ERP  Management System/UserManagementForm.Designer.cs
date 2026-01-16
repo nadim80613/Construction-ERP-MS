@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnShowAll = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnClearSelection = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.btnShowAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -72,6 +72,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.splitContainer1.Panel1.Controls.Add(this.btnShowAll);
             this.splitContainer1.Panel1.Controls.Add(this.btnBack);
             this.splitContainer1.Panel1.Controls.Add(this.btnClearSelection);
@@ -91,6 +92,18 @@
             this.splitContainer1.Size = new System.Drawing.Size(918, 592);
             this.splitContainer1.SplitterDistance = 389;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // btnShowAll
+            // 
+            this.btnShowAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnShowAll.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAll.Location = new System.Drawing.Point(12, 520);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(135, 35);
+            this.btnShowAll.TabIndex = 22;
+            this.btnShowAll.Text = "Show All";
+            this.btnShowAll.UseVisualStyleBackColor = false;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // btnBack
             // 
@@ -318,7 +331,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnSearch.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnSearch.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(387, 7);
             this.btnSearch.Name = "btnSearch";
@@ -343,18 +356,6 @@
             this.lblSearch.Size = new System.Drawing.Size(64, 19);
             this.lblSearch.TabIndex = 12;
             this.lblSearch.Text = "Search :";
-            // 
-            // btnShowAll
-            // 
-            this.btnShowAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnShowAll.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowAll.Location = new System.Drawing.Point(12, 520);
-            this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(135, 35);
-            this.btnShowAll.TabIndex = 22;
-            this.btnShowAll.Text = "Show All";
-            this.btnShowAll.UseVisualStyleBackColor = false;
-            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // frmUserManagement
             // 

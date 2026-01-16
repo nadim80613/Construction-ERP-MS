@@ -97,6 +97,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pnlContent);
             this.splitContainer1.Panel2.Controls.Add(this.pnlTop);
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(949, 550);
             this.splitContainer1.SplitterDistance = 260;
             this.splitContainer1.TabIndex = 1;
@@ -175,6 +176,7 @@
             this.btnProjects.TabIndex = 23;
             this.btnProjects.Text = "Projects";
             this.btnProjects.UseVisualStyleBackColor = false;
+            this.btnProjects.Click += new System.EventHandler(this.btnProjects_Click);
             // 
             // btnUserManagement
             // 
@@ -250,7 +252,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.0099F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.9901F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
             this.tableLayoutPanel1.Controls.Add(this.panel8, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 1);
@@ -270,7 +272,7 @@
             this.panel8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel8.Controls.Add(this.label7);
             this.panel8.Controls.Add(this.button5);
-            this.panel8.Location = new System.Drawing.Point(433, 164);
+            this.panel8.Location = new System.Drawing.Point(432, 164);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(179, 138);
             this.panel8.TabIndex = 1;
@@ -303,7 +305,7 @@
             this.panel7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.button4);
-            this.panel7.Location = new System.Drawing.Point(214, 164);
+            this.panel7.Location = new System.Drawing.Point(213, 164);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(188, 138);
             this.panel7.TabIndex = 1;
@@ -369,7 +371,7 @@
             this.panel5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.button2);
-            this.panel5.Location = new System.Drawing.Point(433, 3);
+            this.panel5.Location = new System.Drawing.Point(432, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(179, 138);
             this.panel5.TabIndex = 1;
@@ -435,7 +437,7 @@
             this.panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.button1);
-            this.panel4.Location = new System.Drawing.Point(214, 3);
+            this.panel4.Location = new System.Drawing.Point(213, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(188, 138);
             this.panel4.TabIndex = 1;
@@ -499,7 +501,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnBack.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnBack.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.Black;
             this.btnBack.Location = new System.Drawing.Point(584, 13);
