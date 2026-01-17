@@ -7,7 +7,7 @@ namespace Construction_ERP__Management_System
     public static class DbConnection
     {
         private static readonly string dbFilePath =
-            @"C:\Users\nadim\Documents\ConstructionERP_DB.mdf";
+            @"C:/Users/nadim/Documents/ConstructionERP_DB.mdf";
 
         private static readonly string connectionString =
             $@"Data Source=(LocalDB)\MSSQLLocalDB;
