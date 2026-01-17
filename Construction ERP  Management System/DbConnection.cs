@@ -1,24 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;    
+﻿using System.Data.SqlClient;
+using System.IO;
 
 namespace Construction_ERP__Management_System
 {
     public static class DbConnection
     {
-        
-        
-         public static  string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\nadim\Documents\ConstructionERP_DB.mdf;Integrated Security=True;Connect Timeout=30";
-         
+        private static readonly string dbFilePath =
+            @"C:\Users\nadim\Documents\ConstructionERP_DB.mdf";
+
+        private static readonly string connectionString =
+            $@"Data Source=(LocalDB)\MSSQLLocalDB;
+               AttachDbFilename={dbFilePath};
+               Integrated Security=True;
+               Connect Timeout=30";
+
         public static SqlConnection GetConnection()
         {
+            if (!File.Exists(dbFilePath))
+            {
+                CreateDatabase(dbFilePath);
+            }
 
             return new SqlConnection(connectionString);
         }
 
+        private static void CreateDatabase(string dbFilePath)
+        {
+            string masterConn =
+                @"Data Source=(LocalDB)\MSSQLLocalDB;Integrated Security=True;";
 
+            string dbName = "ConstructionERP_DB";
+
+            string sql = $@"
+            CREATE DATABASE [{dbName}]
+            ON (NAME = '{dbName}',
+                FILENAME = '{dbFilePath}')";
+
+            using (SqlConnection conn = new SqlConnection(masterConn))
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
