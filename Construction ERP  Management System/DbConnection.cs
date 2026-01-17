@@ -1,5 +1,6 @@
 ﻿using System.Data.SqlClient;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Construction_ERP__Management_System
 {
@@ -39,11 +40,21 @@ namespace Construction_ERP__Management_System
             using (SqlConnection conn = new SqlConnection(masterConn))
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
+
+                try
                 {
-                    cmd.ExecuteNonQuery();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Database creation failed: " + ex.Message);
+                    
                 }
             }
         }
     }
-}
+   }
