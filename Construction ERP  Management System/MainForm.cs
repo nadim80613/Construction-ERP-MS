@@ -19,12 +19,17 @@ namespace Construction_ERP__Management_System
             Navigate(new UcDashboard());
         }
 
+        private readonly UcCompanySetup UcCompanySetup = new UcCompanySetup();
+
+
         private void Navigate(UserControl page)
         {
             panelMain.Controls.Clear();
             page.Dock = DockStyle.Fill;
             panelMain.Controls.Add(page);
         }
+
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -52,9 +57,7 @@ namespace Construction_ERP__Management_System
                 return;
             }
 
-            frmCompanySetup fcs = new frmCompanySetup();
-            fcs.Show();
-            this.Hide();
+            Navigate(new UcCompanySetup());
         }
 
         private void btnUserManagement_Click(object sender, EventArgs e)
