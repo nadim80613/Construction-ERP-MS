@@ -14,13 +14,22 @@ namespace Construction_ERP__Management_System
     {
         public frmMain()
         {
+
             InitializeComponent();
+            Navigate(new UcDashboard());
+        }
+
+        private void Navigate(UserControl page)
+        {
+            panelMain.Controls.Clear();
+            page.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(page);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = "Welcome, " + Session.UserName + "!";
-            lblUserInfo.Text = "User : " + Session.UserName + " | Role : " + Session.Role + " | Company ID : " + Session.CompanyID.ToString();
+            
+           
 
             btnCompanySetup.Visible = Session.IsSuperAdmin();
             btnUserManagement.Visible = Session.IsAdmin();
@@ -29,8 +38,9 @@ namespace Construction_ERP__Management_System
 
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
+            Navigate(new UcDashboard());
 
         }
 

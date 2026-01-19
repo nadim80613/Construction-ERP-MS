@@ -61,6 +61,12 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Session.cs" />
+    <Compile Include="UcDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcDashboard.Designer.cs">
+      <DependentUpon>UcDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </Compile>
     <EmbeddedResource Include="SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcDashboard.resx">
+      <DependentUpon>UcDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserManagementForm.resx">
       <DependentUpon>UserManagementForm.cs</DependentUpon>
