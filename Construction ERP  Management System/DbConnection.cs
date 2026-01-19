@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
 using System.IO;
 using System.Windows.Forms;
 
@@ -6,55 +7,63 @@ namespace Construction_ERP__Management_System
 {
     public static class DbConnection
     {
-        private static readonly string dbFilePath =
-            @"C:/Users/nadim/Documents/ConstructionERP_DB.mdf";
+        // Put DB inside the current user's Documents (or use LocalApplicationData if you prefer)
+        private static readonly string dbFolder =
+            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                         "ConstructionERP");
+
+        private static readonly string dbName = "ConstructionERP_DB";
+        private static readonly string dbFilePath = Path.Combine(dbFolder, $"{dbName}.mdf");
+        private static readonly string logFilePath = Path.Combine(dbFolder, $"{dbName}_log.ldf");
 
         private static readonly string connectionString =
-            $@"Data Source=(LocalDB)\MSSQLLocalDB;
-               AttachDbFilename={dbFilePath};
-               Integrated Security=True;
-               Connect Timeout=30";
+            $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={dbFilePath};Integrated Security=True;Connect Timeout=30;";
 
         public static SqlConnection GetConnection()
         {
+            // Make sure folder exists
+            Directory.CreateDirectory(dbFolder);
+
+            // Create DB if missing
             if (!File.Exists(dbFilePath))
             {
-                CreateDatabase(dbFilePath);
+                CreateDatabase(dbFilePath, logFilePath);
             }
 
             return new SqlConnection(connectionString);
         }
 
-        private static void CreateDatabase(string dbFilePath)
+        private static void CreateDatabase(string mdfPath, string ldfPath)
         {
-            string masterConn =
-                @"Data Source=(LocalDB)\MSSQLLocalDB;Integrated Security=True;";
+            const string masterConn = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;";
 
-            string dbName = "ConstructionERP_DB";
-
+            // Important: use N'' for unicode paths; specify both MDF + LDF in a writable folder
             string sql = $@"
-            CREATE DATABASE [{dbName}]
-            ON (NAME = '{dbName}',
-                FILENAME = '{dbFilePath}')";
+CREATE DATABASE [{dbName}]
+ON PRIMARY
+(
+    NAME = N'{dbName}',
+    FILENAME = N'{mdfPath}'
+)
+LOG ON
+(
+    NAME = N'{dbName}_log',
+    FILENAME = N'{ldfPath}'
+);";
 
-            using (SqlConnection conn = new SqlConnection(masterConn))
+            try
             {
-                conn.Open();
-
-                try
+                using (SqlConnection conn = new SqlConnection(masterConn))
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    using (SqlCommand cmd = new SqlCommand(sql, conn))
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
-
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
                 }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("Database creation failed: " + ex.Message);
-                    
-                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Database creation failed: " + ex.Message);
             }
         }
     }
-   }
+}
