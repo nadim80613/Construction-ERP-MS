@@ -73,6 +73,12 @@
     <Compile Include="UcDashboard.Designer.cs">
       <DependentUpon>UcDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcProjectManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcProjectManagement.Designer.cs">
+      <DependentUpon>UcProjectManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcVendorManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UcDashboard.resx">
       <DependentUpon>UcDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcProjectManagement.resx">
+      <DependentUpon>UcProjectManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcVendorManagement.resx">
       <DependentUpon>UcVendorManagement.cs</DependentUpon>

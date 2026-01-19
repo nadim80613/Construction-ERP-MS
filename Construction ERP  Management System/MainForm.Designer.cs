@@ -30,9 +30,7 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnWipReport = new System.Windows.Forms.Button();
             this.btnInvoices = new System.Windows.Forms.Button();
-            this.btnBudget = new System.Windows.Forms.Button();
             this.btnVendor = new System.Windows.Forms.Button();
             this.btnProjects = new System.Windows.Forms.Button();
             this.btnUserManagement = new System.Windows.Forms.Button();
@@ -78,9 +76,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnWipReport);
             this.panel2.Controls.Add(this.btnInvoices);
-            this.panel2.Controls.Add(this.btnBudget);
             this.panel2.Controls.Add(this.btnVendor);
             this.panel2.Controls.Add(this.btnProjects);
             this.panel2.Controls.Add(this.btnUserManagement);
@@ -92,44 +88,18 @@
             this.panel2.Size = new System.Drawing.Size(387, 718);
             this.panel2.TabIndex = 2;
             // 
-            // btnWipReport
-            // 
-            this.btnWipReport.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnWipReport.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnWipReport.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWipReport.Location = new System.Drawing.Point(72, 588);
-            this.btnWipReport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnWipReport.Name = "btnWipReport";
-            this.btnWipReport.Size = new System.Drawing.Size(272, 54);
-            this.btnWipReport.TabIndex = 27;
-            this.btnWipReport.Text = "WIP Report";
-            this.btnWipReport.UseVisualStyleBackColor = false;
-            // 
             // btnInvoices
             // 
             this.btnInvoices.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnInvoices.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInvoices.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInvoices.Location = new System.Drawing.Point(72, 509);
+            this.btnInvoices.Location = new System.Drawing.Point(72, 425);
             this.btnInvoices.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnInvoices.Name = "btnInvoices";
             this.btnInvoices.Size = new System.Drawing.Size(272, 54);
             this.btnInvoices.TabIndex = 26;
             this.btnInvoices.Text = "Invoices";
             this.btnInvoices.UseVisualStyleBackColor = false;
-            // 
-            // btnBudget
-            // 
-            this.btnBudget.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnBudget.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBudget.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBudget.Location = new System.Drawing.Point(72, 428);
-            this.btnBudget.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnBudget.Name = "btnBudget";
-            this.btnBudget.Size = new System.Drawing.Size(272, 54);
-            this.btnBudget.TabIndex = 25;
-            this.btnBudget.Text = "Budget";
-            this.btnBudget.UseVisualStyleBackColor = false;
             // 
             // btnVendor
             // 
@@ -320,9 +290,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnDasboard;
-        private System.Windows.Forms.Button btnWipReport;
         private System.Windows.Forms.Button btnInvoices;
-        private System.Windows.Forms.Button btnBudget;
         private System.Windows.Forms.Button btnVendor;
         private System.Windows.Forms.Button btnProjects;
         private System.Windows.Forms.Button btnUserManagement;
