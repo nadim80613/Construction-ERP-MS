@@ -79,6 +79,24 @@
     <Compile Include="UcProjectManagement.Designer.cs">
       <DependentUpon>UcProjectManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcSignUp1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcSignUp1.Designer.cs">
+      <DependentUpon>UcSignUp1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcSignUp2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcSignUp2.Designer.cs">
+      <DependentUpon>UcSignUp2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcSignUp3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcSignUp3.Designer.cs">
+      <DependentUpon>UcSignUp3.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcVendorManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -136,6 +154,15 @@
     <EmbeddedResource Include="UcProjectManagement.resx">
       <DependentUpon>UcProjectManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UcSignUp1.resx">
+      <DependentUpon>UcSignUp1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcSignUp2.resx">
+      <DependentUpon>UcSignUp2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcSignUp3.resx">
+      <DependentUpon>UcSignUp3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UcVendorManagement.resx">
       <DependentUpon>UcVendorManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +184,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rsz_excavator_design_inspiration.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\#akconstruction #akproduction #interior #wallpaperdesign #architecture #builder #residential #official.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_0b9c5eecc4df2eb1ed1db6aec9537a53.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

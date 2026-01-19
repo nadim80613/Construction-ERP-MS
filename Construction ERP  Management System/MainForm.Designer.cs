@@ -38,11 +38,11 @@
             this.btnDasboard = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblUserInfo = new System.Windows.Forms.Label();
+            this.panelMain = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -194,14 +194,6 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Construction ERP ";
             // 
-            // panelMain
-            // 
-            this.panelMain.Location = new System.Drawing.Point(4, 106);
-            this.panelMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1023, 740);
-            this.panelMain.TabIndex = 1;
-            // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.Teal;
@@ -252,6 +244,14 @@
             this.lblUserInfo.Size = new System.Drawing.Size(523, 26);
             this.lblUserInfo.TabIndex = 6;
             this.lblUserInfo.Text = "User: ..............| Role: ..............| Company:...............";
+            // 
+            // panelMain
+            // 
+            this.panelMain.Location = new System.Drawing.Point(4, 106);
+            this.panelMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1023, 740);
+            this.panelMain.TabIndex = 1;
             // 
             // frmMain
             // 
