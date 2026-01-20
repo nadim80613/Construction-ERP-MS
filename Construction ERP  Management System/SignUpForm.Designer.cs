@@ -32,6 +32,7 @@
             this.cmbSignUpAs = new System.Windows.Forms.ComboBox();
             this.grpCompany = new System.Windows.Forms.GroupBox();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
             this.grpCompany.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,12 +40,13 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(424, 56);
+            this.lblTitle.Location = new System.Drawing.Point(329, 38);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(277, 26);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Construction ERP System";
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // cmbSignUpAs
             // 
@@ -58,29 +60,43 @@
             // grpCompany
             // 
             this.grpCompany.Controls.Add(this.cmbSignUpAs);
-            this.grpCompany.Location = new System.Drawing.Point(80, 112);
+            this.grpCompany.Location = new System.Drawing.Point(80, 87);
             this.grpCompany.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.grpCompany.Name = "grpCompany";
             this.grpCompany.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.grpCompany.Size = new System.Drawing.Size(946, 86);
+            this.grpCompany.Size = new System.Drawing.Size(809, 73);
             this.grpCompany.TabIndex = 2;
             this.grpCompany.TabStop = false;
             this.grpCompany.Text = "SignUp as ";
             // 
             // panelMain
             // 
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMain.Location = new System.Drawing.Point(0, 206);
+            this.panelMain.Location = new System.Drawing.Point(0, 168);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1114, 630);
+            this.panelMain.Size = new System.Drawing.Size(1005, 623);
             this.panelMain.TabIndex = 3;
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnBack.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBack.Location = new System.Drawing.Point(538, 796);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(68, 28);
+            this.btnBack.TabIndex = 13;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // frmSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1114, 836);
+            this.ClientSize = new System.Drawing.Size(1005, 826);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.grpCompany);
             this.Controls.Add(this.lblTitle);
@@ -101,5 +117,6 @@
         private System.Windows.Forms.ComboBox cmbSignUpAs;
         private System.Windows.Forms.GroupBox grpCompany;
         private System.Windows.Forms.Panel panelMain;
+        private System.Windows.Forms.Button btnBack;
     }
 }

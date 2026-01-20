@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
             this.b1 = new System.Windows.Forms.Button();
             this.gB2 = new System.Windows.Forms.GroupBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -47,23 +46,11 @@
             this.gB2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(372, 321);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(61, 25);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // b1
             // 
             this.b1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.b1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.b1.Location = new System.Drawing.Point(230, 321);
+            this.b1.Location = new System.Drawing.Point(271, 321);
             this.b1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.b1.Name = "b1";
             this.b1.Size = new System.Drawing.Size(61, 25);
@@ -228,7 +215,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.b1);
             this.Controls.Add(this.gB2);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -241,8 +227,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button b1;
         private System.Windows.Forms.GroupBox gB2;
         private System.Windows.Forms.TextBox textBox6;

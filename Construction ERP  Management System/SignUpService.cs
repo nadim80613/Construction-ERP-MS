@@ -44,13 +44,9 @@ namespace Construction_ERP__Management_System
 
         }
 
-        public bool RegisterCompany(string CompanyName, string Address, string TaxID, string Email, string Password)
+        public int RegisterCompanyWithAdmin(string CompanyName, string Address, string TaxID, string Email, string Password)
         {
-            if (IsEmailExists(Email) == true)
-            {
-                return false;
-            }
-
+            
 
 
             using (SqlConnection con = DbConnection.GetConnection())
@@ -59,10 +55,25 @@ namespace Construction_ERP__Management_System
                 SqlTransaction tx = con.BeginTransaction();
                 try
                 {
+                    string q = "SELECT COUNT(*) FROM dbo.Users WHERE Email=@Email";
+                    using (SqlCommand cmdCheck = new SqlCommand(q, con, tx))
+                    {
+                        cmdCheck.Parameters.AddWithValue("@Email", Email);
+                        int count = (int)cmdCheck.ExecuteScalar();
+                        if (count > 0)
+                        {
+                            tx.Rollback();
+                            return -1;
+                        }
+
+
+                    }
+
+
+                    int CompanyID = 0;
 
                     string q1 = @"INSERT INTO dbo.Companies ([Name],[Address],TaxID) VALUES (@Name,@Address,@TaxID); SELECT CAST(SCOPE_IDENTITY() AS int)";
 
-                    int CompanyID = 0;
                     using (SqlCommand cmd1 = new SqlCommand(q1, con, tx))
                     {
                         cmd1.Parameters.AddWithValue("@Name", CompanyName);
@@ -87,7 +98,7 @@ namespace Construction_ERP__Management_System
                     }
 
                     tx.Commit();
-                    return true;
+                    return CompanyID;
 
                 }
 

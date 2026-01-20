@@ -17,9 +17,42 @@ namespace Construction_ERP__Management_System
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btnRegister_Click(object sender, EventArgs e)
         {
 
+            string companyName = txtCompanyName.Text.Trim();
+            string address = txtAddress.Text.Trim();
+            string taxId = txtTaxID.Text.Trim();
+            string adminEmail = txtEmail.Text.Trim();
+            string pass = txtPassword.Text;
+            string confirm = txtConfirmPassword.Text;
+
+            if (companyName == "" || address == "" || taxId == "" || adminEmail == "" || pass == "" || confirm == "")
+            {
+                MessageBox.Show("Please fill all the feild");
+                return;
+            }
+            else if (pass != confirm)
+            {
+                MessageBox.Show("Password did not match");
+                return;
+            }
+            else
+            {
+                SignUpService s = new SignUpService();
+                int companyId = s.RegisterCompanyWithAdmin(companyName, address, taxId, adminEmail, pass);
+
+                if (companyId == -1)
+                {
+                    MessageBox.Show(" Email already used , please try different Email");
+                    return;
+                }
+
+                MessageBox.Show("Company + Admin Created Successfully!\nYour CompanyID: " + companyId);
+            }
         }
-    }
-}
+     }
+
+       
+ }
+

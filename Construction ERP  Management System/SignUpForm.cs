@@ -58,5 +58,22 @@ namespace Construction_ERP__Management_System
             else
                 MessageBox.Show("No match index: " + i);
         }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            frmLogin lf = new frmLogin();
+            lf.Show();
+            this.Hide();
+        }
     }
 }
