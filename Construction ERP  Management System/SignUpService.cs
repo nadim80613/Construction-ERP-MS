@@ -51,12 +51,14 @@ namespace Construction_ERP__Management_System
                 return false;
             }
 
-            try
+
+
+            using (SqlConnection con = DbConnection.GetConnection())
             {
-                using (SqlConnection con = DbConnection.GetConnection())
+                con.Open();
+                SqlTransaction tx = con.BeginTransaction();
+                try
                 {
-                    con.Open();
-                    SqlTransaction tx = con.BeginTransaction();
 
                     string q1 = @"INSERT INTO dbo.Companies ([Name],[Address],TaxID) VALUES (@Name,@Address,@TaxID); SELECT CAST(SCOPE_IDENTITY() AS int)";
 
@@ -73,7 +75,7 @@ namespace Construction_ERP__Management_System
 
                     string q2 = @"INSERT INTO dbo.Users (CompanyID,[Name],Email,PasswordHash,[Role],[Status]) VALUES (@CompanyID,@Name,@Email,@PasswordHash,@Role,@Status);";
 
-                    usingD(qlCommand cmd2 = new SqlCommand(q2, con, tx))
+                    using (SqlCommand cmd2 = new SqlCommand(q2, con, tx))
                     {
                         cmd2.Parameters.AddWithValue("@CompanyID", CompanyID);
                         cmd2.Parameters.AddWithValue("@Name", "Admin");
@@ -89,16 +91,21 @@ namespace Construction_ERP__Management_System
 
                 }
 
+
+                catch
+                {
+                    tx.Rollback();
+                    throw;
+                }
+
             }
-            catch 
-            {
-                tx.Rollback();
-                throw;
-            }
+
+
+
+
+
 
         }
-
-
-
     }
 }
+
