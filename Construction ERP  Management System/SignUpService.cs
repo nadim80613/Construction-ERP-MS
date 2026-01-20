@@ -100,12 +100,109 @@ namespace Construction_ERP__Management_System
 
             }
 
-
-
-
-
-
         }
+
+
+        public bool RegisterUser(int CompanyID, string Name, string Email, string Password)
+        {
+            using (SqlConnection con = DbConnection.GetConnection())
+            {
+                con.Open();
+
+
+                string q = "SELECT COUNT(*) FROM dbo.Users WHERE Email=@Email";
+                using (SqlCommand cmdCheck = new SqlCommand(q, con))
+                {
+                    cmdCheck.Parameters.AddWithValue("@Email", Email);
+                    int count = (int)cmdCheck.ExecuteScalar();
+
+                    if (count > 0) return false;
+                }
+
+                string passHash = PasswordHelper.HashPassword(Password);
+
+                string q2 = @"INSERT INTO dbo.Users (CompanyID,[Name],Email,PasswordHash,[Role],[Status]) VALUES (@CompanyID,@Name,@Email,@PasswordHash,@Role,@Status);";
+
+                using (SqlCommand cmd = new SqlCommand(q2, con))
+                {
+                    cmd.Parameters.AddWithValue("@CompanyID", CompanyID);
+                    cmd.Parameters.AddWithValue("@Name", Name);
+                    cmd.Parameters.AddWithValue("@Email", Email);
+                    cmd.Parameters.AddWithValue("@PasswordHash", passHash);
+                    cmd.Parameters.AddWithValue("@Role", "User");
+                    cmd.Parameters.AddWithValue("@Status", "Active");
+                    cmd.ExecuteNonQuery();
+                }
+
+                return true;
+            }
+        }
+
+        public bool RegisterVendor(int CompanyID, string Name, string Email, string Password, string Phone)
+        {
+            using (SqlConnection con = DbConnection.GetConnection())
+            {
+                con.Open();
+                SqlTransaction tx = con.BeginTransaction();
+
+                try
+                {
+                    
+                    string q = "SELECT COUNT(*) FROM dbo.Users WHERE Email=@Email";
+                    using (SqlCommand cmd = new SqlCommand(q, con, tx))
+                    {
+                        cmd.Parameters.AddWithValue("@Email", Email);
+                        int count = (int)cmd.ExecuteScalar();
+                        if (count > 0)
+                        {
+                            tx.Rollback();
+                            return false;
+                        }
+                    }
+
+                    string vendorType = "Supplier"; 
+                    string passHash = PasswordHelper.HashPassword(Password);
+
+                    
+                    string q1 = @"INSERT INTO dbo.Vendors (CompanyID, [Name], [Type], Phone, Email, [Status]) VALUES (@CompanyID, @Name, @Type, @Phone, @Email, @Status);";
+
+                    using (SqlCommand cmd1 = new SqlCommand(q1, con, tx))
+                    {
+                        cmd1.Parameters.AddWithValue("@CompanyID", CompanyID);
+                        cmd1.Parameters.AddWithValue("@Name", Name);
+                        cmd1.Parameters.AddWithValue("@Type", vendorType);
+                        cmd1.Parameters.AddWithValue("@Phone", Phone);
+                        cmd1.Parameters.AddWithValue("@Email", Email);
+                        cmd1.Parameters.AddWithValue("@Status", "Active");
+                        cmd1.ExecuteNonQuery();
+                    }
+
+                    
+                    string q2 = @"INSERT INTO dbo.Users (CompanyID, [Name], Email, PasswordHash, [Role], [Status]) VALUES (@CompanyID, @Name, @Email, @PasswordHash, @Role, @Status);";
+
+                    using (SqlCommand cmd2 = new SqlCommand(q2, con, tx))
+                    {
+                        cmd2.Parameters.AddWithValue("@CompanyID", CompanyID);
+                        cmd2.Parameters.AddWithValue("@Name", Name);
+                        cmd2.Parameters.AddWithValue("@Email", Email);
+                        cmd2.Parameters.AddWithValue("@PasswordHash", passHash);
+                        cmd2.Parameters.AddWithValue("@Role", "Vendor");
+                        cmd2.Parameters.AddWithValue("@Status", "Active");
+                        cmd2.ExecuteNonQuery();
+                    }
+
+                    tx.Commit();
+                    return true;
+                }
+                catch
+                {
+                    tx.Rollback();
+                    throw;
+                }
+            }
+        }
+
+
     }
 }
 

@@ -11,13 +11,10 @@ namespace Construction_ERP__Management_System
     {
         public static string HashPassword(string password)
         {
-            using (var sha256 = SHA256.Create())
+            using (SHA256 sha = SHA256.Create())
             {
-                byte[] bytes = Encoding.UTF8.GetBytes(password);
-                byte[] hash = sha256.ComputeHash(bytes);
-
-                return Convert.ToBase64String(hash);
-
+                byte[] bytes = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return Convert.ToBase64String(bytes);
             }
         }
     }

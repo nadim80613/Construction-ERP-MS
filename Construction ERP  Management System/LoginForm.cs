@@ -74,7 +74,7 @@ namespace Construction_ERP__Management_System
                 return;
             }
 
-            string passwordHash = HashPassword(password);
+            string passwordHash = PasswordHelper.HashPassword(password);
 
             using (SqlConnection con = DbConnection.GetConnection())
             {
@@ -129,14 +129,7 @@ namespace Construction_ERP__Management_System
 
 
         }
-        private string HashPassword(string password)
-        {
-            using (SHA256 sha = SHA256.Create())
-            {
-                byte[] bytes = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
-                return Convert.ToBase64String(bytes);
-            }
-        }
+      
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

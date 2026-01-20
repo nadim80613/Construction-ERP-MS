@@ -31,7 +31,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.cmbSignUpAs = new System.Windows.Forms.ComboBox();
             this.grpCompany = new System.Windows.Forms.GroupBox();
-            this.Signupmainpanal = new System.Windows.Forms.Panel();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.grpCompany.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +42,7 @@
             this.lblTitle.Location = new System.Drawing.Point(424, 56);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(413, 41);
+            this.lblTitle.Size = new System.Drawing.Size(277, 26);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Construction ERP System";
             // 
@@ -51,8 +51,9 @@
             this.cmbSignUpAs.FormattingEnabled = true;
             this.cmbSignUpAs.Location = new System.Drawing.Point(167, 27);
             this.cmbSignUpAs.Name = "cmbSignUpAs";
-            this.cmbSignUpAs.Size = new System.Drawing.Size(359, 40);
+            this.cmbSignUpAs.Size = new System.Drawing.Size(359, 30);
             this.cmbSignUpAs.TabIndex = 4;
+            this.cmbSignUpAs.SelectionChangeCommitted += new System.EventHandler(this.cmbSignUpAs_SelectionChangeCommitted);
             // 
             // grpCompany
             // 
@@ -66,20 +67,21 @@
             this.grpCompany.TabStop = false;
             this.grpCompany.Text = "SignUp as ";
             // 
-            // Signupmainpanal
+            // panelMain
             // 
-            this.Signupmainpanal.Location = new System.Drawing.Point(80, 221);
-            this.Signupmainpanal.Name = "Signupmainpanal";
-            this.Signupmainpanal.Size = new System.Drawing.Size(946, 429);
-            this.Signupmainpanal.TabIndex = 3;
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelMain.Location = new System.Drawing.Point(0, 206);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1114, 630);
+            this.panelMain.TabIndex = 3;
             // 
             // frmSignUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1114, 672);
-            this.Controls.Add(this.Signupmainpanal);
+            this.ClientSize = new System.Drawing.Size(1114, 836);
+            this.Controls.Add(this.panelMain);
             this.Controls.Add(this.grpCompany);
             this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,6 +100,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.ComboBox cmbSignUpAs;
         private System.Windows.Forms.GroupBox grpCompany;
-        private System.Windows.Forms.Panel Signupmainpanal;
+        private System.Windows.Forms.Panel panelMain;
     }
 }
