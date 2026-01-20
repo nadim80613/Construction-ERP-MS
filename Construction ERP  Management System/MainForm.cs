@@ -21,7 +21,8 @@ namespace Construction_ERP__Management_System
 
         private readonly UcCompanySetup UcCompanySetup = new UcCompanySetup();
         private readonly UcVendorManagement ucVendorManagement = new UcVendorManagement();
-        private readonly UcProjectManagement ucProjectManagement = new UcProjectManagement();   
+        private readonly UcProjectManagement ucProjectManagement = new UcProjectManagement(); 
+        private readonly UcProductManagement UcProductManagement = new UcProductManagement();
 
         private void Navigate(UserControl page)
         {
@@ -94,6 +95,11 @@ namespace Construction_ERP__Management_System
         private void btnVendor_Click(object sender, EventArgs e)
         {
             Navigate(new UcVendorManagement());
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            Navigate(new UcProductManagement());
         }
     }
 }
