@@ -60,7 +60,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasswordHelper.cs" />
     <Compile Include="Session.cs" />
+    <Compile Include="SignUpService.cs" />
     <Compile Include="UcCompanySetup.cs">
       <SubType>UserControl</SubType>
     </Compile>
