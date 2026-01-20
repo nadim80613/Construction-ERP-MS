@@ -21,10 +21,10 @@ namespace Construction_ERP__Management_System
 
         private readonly UcCompanySetup UcCompanySetup = new UcCompanySetup();
         private readonly UcVendorManagement ucVendorManagement = new UcVendorManagement();
-        private readonly UcProjectManagement ucProjectManagement = new UcProjectManagement(); 
+        private readonly UcProjectManagement ucProjectManagement = new UcProjectManagement();
         private readonly UcProductManagement UcProductManagement = new UcProductManagement();
 
-        private void Navigate(UserControl page)
+        public void Navigate(UserControl page)
         {
             panelMain.Controls.Clear();
             page.Dock = DockStyle.Fill;
@@ -35,11 +35,11 @@ namespace Construction_ERP__Management_System
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
-           
+
+
 
             btnCompanySetup.Visible = Session.IsSuperAdmin();
-            btnUserManagement.Visible = Session.IsAdmin();
+            btnUserManagement.Visible = Session.IsAdmin() || Session.IsSuperAdmin();
 
 
 
@@ -59,20 +59,20 @@ namespace Construction_ERP__Management_System
                 return;
             }
 
-            Navigate(new UcCompanySetup());
+            frmCompanySetup fcs = new frmCompanySetup();
+            ShowFormInPanel(fcs);
         }
 
         private void btnUserManagement_Click(object sender, EventArgs e)
         {
-            if (!Session.IsAdmin())
+            if (!Session.IsAdmin() && !Session.IsSuperAdmin())
             {
-                MessageBox.Show("Access Denied! only admin can acess");
+                MessageBox.Show("Access Denied! only Admin/Super Admin can acess");
                 return;
             }
 
             frmUserManagement fum = new frmUserManagement();
-            fum.Show();
-            this.Hide();
+            ShowFormInPanel(fum);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -100,6 +100,19 @@ namespace Construction_ERP__Management_System
         private void btnProducts_Click(object sender, EventArgs e)
         {
             Navigate(new UcProductManagement());
+        }
+
+        public void ShowFormInPanel(Form f)
+        {
+            panelMain.Controls.Clear();
+
+            f.TopLevel = false;
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(f);
+            f.Show();
+            f.BringToFront();
         }
     }
 }

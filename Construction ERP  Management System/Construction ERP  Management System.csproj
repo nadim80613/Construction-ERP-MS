@@ -105,6 +105,12 @@
     <Compile Include="UcSignUp3.Designer.cs">
       <DependentUpon>UcSignUp3.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcUserManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcUserManagement.Designer.cs">
+      <DependentUpon>UcUserManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcVendorManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UcSignUp3.resx">
       <DependentUpon>UcSignUp3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcUserManagement.resx">
+      <DependentUpon>UcUserManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcVendorManagement.resx">
       <DependentUpon>UcVendorManagement.cs</DependentUpon>

@@ -131,9 +131,11 @@ namespace Construction_ERP__Management_System
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            frmMain fm = new frmMain();
-            fm.Show();
-            this.Hide();
+            var main = Application.OpenForms["frmMain"] as frmMain;
+            if (main != null)
+            {
+                main.Navigate(new UcDashboard()); 
+            }
         }
 
         private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
