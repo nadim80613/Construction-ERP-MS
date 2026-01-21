@@ -17,9 +17,6 @@ namespace Construction_ERP__Management_System
             InitializeComponent();
         }
 
-        private void b1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

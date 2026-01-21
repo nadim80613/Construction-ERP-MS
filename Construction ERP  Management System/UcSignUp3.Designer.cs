@@ -57,7 +57,7 @@
             this.b1.TabIndex = 17;
             this.b1.Text = "Register";
             this.b1.UseVisualStyleBackColor = false;
-            this.b1.Click += new System.EventHandler(this.b1_Click);
+           
             // 
             // gB2
             // 
