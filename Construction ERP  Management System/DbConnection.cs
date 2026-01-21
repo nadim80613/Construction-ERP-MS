@@ -264,18 +264,17 @@ BEGIN
     CREATE TABLE dbo.Vendors
     (
         VendorID   INT IDENTITY(1,1) NOT NULL,
-        
+        CompanyID  INT NOT NULL,
         Name       NVARCHAR(200) NOT NULL,
-       
+        [Type]     NVARCHAR(20) NOT NULL,
         Phone      NVARCHAR(50) NULL,
         Email      NVARCHAR(150) NULL,
         [Status]   NVARCHAR(50) NOT NULL,
         CreatedAt  DATETIME CONSTRAINT DF_Vendors_CreatedAt DEFAULT (GETDATE()) NOT NULL,
         CONSTRAINT PK_Vendors PRIMARY KEY CLUSTERED (VendorID),
-        
-        
+        CONSTRAINT FK_Vendors_Companies FOREIGN KEY (CompanyID) REFERENCES dbo.Companies(CompanyID),
+        CONSTRAINT CK_Vendors_Type CHECK ([Type] IN (N'Subcontractor', N'Supplier', N'Rental'))
     );
-
     CREATE INDEX IX_Vendors_Company ON dbo.Vendors(CompanyID);
 END;
 

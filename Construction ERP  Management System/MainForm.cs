@@ -17,6 +17,7 @@ namespace Construction_ERP__Management_System
 
             InitializeComponent();
             Navigate(new UcDashboard());
+            
         }
 
         private readonly UcCompanySetup UcCompanySetup = new UcCompanySetup();
@@ -31,7 +32,50 @@ namespace Construction_ERP__Management_System
             panelMain.Controls.Add(page);
         }
 
+        private void UpdateHeader()
+        {
+            string user = "";
+            string roleText = "";
+            string company = "";
 
+            if (Session.UserName != null)
+                user = Session.UserName;
+            else
+                user = "";
+
+            company = Session.CompanyID.ToString();
+
+            if (Session.IsSuperAdmin())
+            {
+                roleText = "SuperAdmin";
+            }
+            else
+            {
+                if (Session.Role != null)
+                {
+                    if (Session.Role.Equals("Admin", StringComparison.OrdinalIgnoreCase))
+                        roleText = "Admin";
+                    else
+                    {
+                        if (Session.Role.Equals("User", StringComparison.OrdinalIgnoreCase))
+                            roleText = "User";
+                        else
+                        {
+                            if (Session.Role.Equals("Vendor", StringComparison.OrdinalIgnoreCase))
+                                roleText = "Vendor";
+                            else
+                                roleText = Session.Role;
+                        }
+                    }
+                }
+                else
+                {
+                    roleText = "";
+                }
+            }
+
+            lblUserInfo.Text = "User: " + user + " | Role: " + roleText + " | Company: " + company;
+        }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -41,6 +85,7 @@ namespace Construction_ERP__Management_System
             btnCompanySetup.Visible = Session.IsSuperAdmin();
             btnUserManagement.Visible = Session.IsAdmin() || Session.IsSuperAdmin();
 
+            UpdateHeader();
 
 
         }
