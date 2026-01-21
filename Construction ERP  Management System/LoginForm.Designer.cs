@@ -46,9 +46,10 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(471, 53);
+            this.lblTitle.Location = new System.Drawing.Point(706, 82);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(222, 22);
+            this.lblTitle.Size = new System.Drawing.Size(333, 32);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Construction ERP System";
             this.lblTitle.Click += new System.EventHandler(this.label1_Click);
@@ -57,24 +58,27 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(433, 142);
+            this.lblEmail.Location = new System.Drawing.Point(650, 218);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(56, 19);
+            this.lblEmail.Size = new System.Drawing.Size(87, 26);
             this.lblEmail.TabIndex = 1;
             this.lblEmail.Text = "Email :";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(496, 142);
+            this.txtEmail.Location = new System.Drawing.Point(744, 218);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(236, 20);
+            this.txtEmail.Size = new System.Drawing.Size(352, 26);
             this.txtEmail.TabIndex = 2;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(500, 188);
+            this.txtPassword.Location = new System.Drawing.Point(750, 289);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(236, 20);
+            this.txtPassword.Size = new System.Drawing.Size(352, 26);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
@@ -82,9 +86,10 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(408, 187);
+            this.lblPassword.Location = new System.Drawing.Point(612, 288);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(81, 19);
+            this.lblPassword.Size = new System.Drawing.Size(124, 26);
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Password :";
             // 
@@ -92,9 +97,10 @@
             // 
             this.chkShowPassword.AutoSize = true;
             this.chkShowPassword.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkShowPassword.Location = new System.Drawing.Point(506, 226);
+            this.chkShowPassword.Location = new System.Drawing.Point(759, 348);
+            this.chkShowPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chkShowPassword.Name = "chkShowPassword";
-            this.chkShowPassword.Size = new System.Drawing.Size(105, 17);
+            this.chkShowPassword.Size = new System.Drawing.Size(151, 23);
             this.chkShowPassword.TabIndex = 5;
             this.chkShowPassword.Text = "Show Password";
             this.chkShowPassword.UseVisualStyleBackColor = true;
@@ -104,9 +110,10 @@
             // 
             this.chkRememberMe.AutoSize = true;
             this.chkRememberMe.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkRememberMe.Location = new System.Drawing.Point(635, 226);
+            this.chkRememberMe.Location = new System.Drawing.Point(952, 348);
+            this.chkRememberMe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chkRememberMe.Name = "chkRememberMe";
-            this.chkRememberMe.Size = new System.Drawing.Size(102, 17);
+            this.chkRememberMe.Size = new System.Drawing.Size(144, 23);
             this.chkRememberMe.TabIndex = 6;
             this.chkRememberMe.Text = "Remember Me";
             this.chkRememberMe.UseVisualStyleBackColor = true;
@@ -116,9 +123,10 @@
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLogin.Location = new System.Drawing.Point(514, 292);
+            this.btnLogin.Location = new System.Drawing.Point(771, 449);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(221, 35);
+            this.btnLogin.Size = new System.Drawing.Size(332, 54);
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -129,9 +137,10 @@
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnExit.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnExit.Location = new System.Drawing.Point(699, 403);
+            this.btnExit.Location = new System.Drawing.Point(1048, 620);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 35);
+            this.btnExit.Size = new System.Drawing.Size(112, 54);
             this.btnExit.TabIndex = 8;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -142,9 +151,10 @@
             this.btnSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnSignUp.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignUp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSignUp.Location = new System.Drawing.Point(515, 333);
+            this.btnSignUp.Location = new System.Drawing.Point(772, 512);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(221, 35);
+            this.btnSignUp.Size = new System.Drawing.Size(332, 54);
             this.btnSignUp.TabIndex = 9;
             this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.UseVisualStyleBackColor = false;
@@ -153,21 +163,23 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Construction_ERP__Management_System.Properties.Resources.rsz_excavator_design_inspiration;
+            this.pictureBox1.BackgroundImage = global::Construction_ERP__Management_System.Properties.Resources.rsz_0b9c5eecc4df2eb1ed1db6aec9537a53;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(1, -1);
+            this.pictureBox1.Location = new System.Drawing.Point(2, -2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(362, 451);
+            this.pictureBox1.Size = new System.Drawing.Size(543, 694);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.btnExit);
@@ -180,6 +192,7 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblTitle);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLogin";
             this.Text = "Login Form";
             this.Load += new System.EventHandler(this.Form1_Load);

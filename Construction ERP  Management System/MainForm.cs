@@ -14,23 +14,40 @@ namespace Construction_ERP__Management_System
     {
         public frmMain()
         {
+
             InitializeComponent();
+            Navigate(new UcDashboard());
         }
+
+        private readonly UcCompanySetup UcCompanySetup = new UcCompanySetup();
+        private readonly UcVendorManagement ucVendorManagement = new UcVendorManagement();
+        private readonly UcProjectManagement ucProjectManagement = new UcProjectManagement();
+        private readonly UcProductManagement UcProductManagement = new UcProductManagement();
+
+        public void Navigate(UserControl page)
+        {
+            panelMain.Controls.Clear();
+            page.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(page);
+        }
+
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = "Welcome, " + Session.UserName + "!";
-            lblUserInfo.Text = "User : " + Session.UserName + " | Role : " + Session.Role + " | Company ID : " + Session.CompanyID.ToString();
+
+
 
             btnCompanySetup.Visible = Session.IsSuperAdmin();
-            btnUserManagement.Visible = Session.IsAdmin();
+            btnUserManagement.Visible = Session.IsAdmin() || Session.IsSuperAdmin();
 
 
 
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
+            Navigate(new UcDashboard());
 
         }
 
@@ -43,21 +60,19 @@ namespace Construction_ERP__Management_System
             }
 
             frmCompanySetup fcs = new frmCompanySetup();
-            fcs.Show();
-            this.Hide();
+            ShowFormInPanel(fcs);
         }
 
         private void btnUserManagement_Click(object sender, EventArgs e)
         {
-            if (!Session.IsAdmin())
+            if (!Session.IsAdmin() && !Session.IsSuperAdmin())
             {
-                MessageBox.Show("Access Denied! only admin can acess");
+                MessageBox.Show("Access Denied! only Admin/Super Admin can acess");
                 return;
             }
 
             frmUserManagement fum = new frmUserManagement();
-            fum.Show();
-            this.Hide();
+            ShowFormInPanel(fum);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -69,12 +84,35 @@ namespace Construction_ERP__Management_System
 
         private void btnProjects_Click(object sender, EventArgs e)
         {
-
+            Navigate(new UcProjectManagement());
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnVendor_Click(object sender, EventArgs e)
+        {
+            Navigate(new UcVendorManagement());
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            Navigate(new UcProductManagement());
+        }
+
+        public void ShowFormInPanel(Form f)
+        {
+            panelMain.Controls.Clear();
+
+            f.TopLevel = false;
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.Dock = DockStyle.Fill;
+
+            panelMain.Controls.Add(f);
+            f.Show();
+            f.BringToFront();
         }
     }
 }

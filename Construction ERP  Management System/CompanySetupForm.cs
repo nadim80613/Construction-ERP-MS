@@ -175,8 +175,11 @@ namespace Construction_ERP__Management_System
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            frmMain fm = new frmMain();
-            this.Hide();
+            var main = this.FindForm() as frmMain;
+            if (main != null)
+            {
+                main.Navigate(new UcDashboard());
+            }
         }
     }
 }
