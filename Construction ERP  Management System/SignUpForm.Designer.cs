@@ -43,7 +43,7 @@
             this.lblTitle.Location = new System.Drawing.Point(329, 26);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(413, 41);
+            this.lblTitle.Size = new System.Drawing.Size(277, 26);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Construction ERP System";
             this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
@@ -53,8 +53,9 @@
             this.cmbSignUpAs.FormattingEnabled = true;
             this.cmbSignUpAs.Location = new System.Drawing.Point(167, 27);
             this.cmbSignUpAs.Name = "cmbSignUpAs";
-            this.cmbSignUpAs.Size = new System.Drawing.Size(359, 40);
+            this.cmbSignUpAs.Size = new System.Drawing.Size(359, 30);
             this.cmbSignUpAs.TabIndex = 4;
+            this.cmbSignUpAs.SelectedIndexChanged += new System.EventHandler(this.cmbSignUpAs_SelectedIndexChanged);
             this.cmbSignUpAs.SelectionChangeCommitted += new System.EventHandler(this.cmbSignUpAs_SelectionChangeCommitted);
             // 
             // grpCompany
@@ -93,7 +94,7 @@
             // 
             // frmSignUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1064, 587);
