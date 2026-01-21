@@ -16,5 +16,10 @@ namespace Construction_ERP__Management_System
         {
             InitializeComponent();
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
