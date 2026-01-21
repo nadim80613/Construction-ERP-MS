@@ -37,7 +37,7 @@
             this.txtProjectID = new System.Windows.Forms.TextBox();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.btnView = new System.Windows.Forms.Button();
-            this.btnDelet = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,12 +47,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtLocation = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtStart = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtEnd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.dtStart = new System.Windows.Forms.DateTimePicker();
+            this.dtEnd = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -67,14 +67,16 @@
             this.dgvProjects.RowTemplate.Height = 28;
             this.dgvProjects.Size = new System.Drawing.Size(357, 433);
             this.dgvProjects.TabIndex = 19;
+            this.dgvProjects.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjects_CellClick);
+            this.dgvProjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjects_CellContentClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dtEnd);
+            this.groupBox1.Controls.Add(this.dtStart);
             this.groupBox1.Controls.Add(this.cmbStatus);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtEnd);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtStart);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtLocation);
             this.groupBox1.Controls.Add(this.label5);
@@ -87,7 +89,7 @@
             this.groupBox1.Controls.Add(this.txtProjectID);
             this.groupBox1.Controls.Add(this.txtCode);
             this.groupBox1.Controls.Add(this.btnView);
-            this.groupBox1.Controls.Add(this.btnDelet);
+            this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -114,6 +116,7 @@
             this.btnRefresh.TabIndex = 12;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnClear
             // 
@@ -127,6 +130,7 @@
             this.btnClear.TabIndex = 11;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSave
             // 
@@ -140,6 +144,7 @@
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtCompanyID
             // 
@@ -147,6 +152,7 @@
             this.txtCompanyID.Location = new System.Drawing.Point(124, 86);
             this.txtCompanyID.Margin = new System.Windows.Forms.Padding(2);
             this.txtCompanyID.Name = "txtCompanyID";
+            this.txtCompanyID.ReadOnly = true;
             this.txtCompanyID.Size = new System.Drawing.Size(186, 23);
             this.txtCompanyID.TabIndex = 9;
             // 
@@ -156,6 +162,7 @@
             this.txtProjectID.Location = new System.Drawing.Point(124, 42);
             this.txtProjectID.Margin = new System.Windows.Forms.Padding(2);
             this.txtProjectID.Name = "txtProjectID";
+            this.txtProjectID.ReadOnly = true;
             this.txtProjectID.Size = new System.Drawing.Size(186, 23);
             this.txtProjectID.TabIndex = 8;
             // 
@@ -180,19 +187,21 @@
             this.btnView.TabIndex = 6;
             this.btnView.Text = "View ";
             this.btnView.UseVisualStyleBackColor = false;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
-            // btnDelet
+            // btnDelete
             // 
-            this.btnDelet.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnDelet.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelet.Location = new System.Drawing.Point(165, 432);
-            this.btnDelet.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDelet.Name = "btnDelet";
-            this.btnDelet.Size = new System.Drawing.Size(53, 25);
-            this.btnDelet.TabIndex = 5;
-            this.btnDelet.Text = "Delete";
-            this.btnDelet.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDelete.Location = new System.Drawing.Point(165, 432);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(53, 25);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label3
             // 
@@ -246,6 +255,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(204, 26);
             this.txtSearch.TabIndex = 20;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // txtName
             // 
@@ -287,40 +297,22 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Location :";
             // 
-            // txtStart
-            // 
-            this.txtStart.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStart.Location = new System.Drawing.Point(124, 245);
-            this.txtStart.Margin = new System.Windows.Forms.Padding(2);
-            this.txtStart.Name = "txtStart";
-            this.txtStart.Size = new System.Drawing.Size(186, 23);
-            this.txtStart.TabIndex = 18;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(69, 251);
+            this.label6.Location = new System.Drawing.Point(69, 259);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 17);
             this.label6.TabIndex = 17;
             this.label6.Text = "Start :";
             // 
-            // txtEnd
-            // 
-            this.txtEnd.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEnd.Location = new System.Drawing.Point(124, 284);
-            this.txtEnd.Margin = new System.Windows.Forms.Padding(2);
-            this.txtEnd.Name = "txtEnd";
-            this.txtEnd.Size = new System.Drawing.Size(186, 23);
-            this.txtEnd.TabIndex = 20;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(74, 290);
+            this.label7.Location = new System.Drawing.Point(74, 308);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 17);
@@ -331,20 +323,37 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(60, 327);
+            this.label8.Location = new System.Drawing.Point(60, 343);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 17);
             this.label8.TabIndex = 21;
             this.label8.Text = "Status :";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // cmbStatus
             // 
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(124, 321);
+            this.cmbStatus.Location = new System.Drawing.Point(122, 337);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(125, 30);
             this.cmbStatus.TabIndex = 22;
+            // 
+            // dtStart
+            // 
+            this.dtStart.CalendarFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtStart.Location = new System.Drawing.Point(122, 251);
+            this.dtStart.Name = "dtStart";
+            this.dtStart.Size = new System.Drawing.Size(192, 29);
+            this.dtStart.TabIndex = 23;
+            // 
+            // dtEnd
+            // 
+            this.dtEnd.CalendarFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtEnd.Location = new System.Drawing.Point(122, 300);
+            this.dtEnd.Name = "dtEnd";
+            this.dtEnd.Size = new System.Drawing.Size(191, 29);
+            this.dtEnd.TabIndex = 24;
             // 
             // UcProjectManagement
             // 
@@ -357,6 +366,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UcProjectManagement";
             this.Size = new System.Drawing.Size(682, 481);
+            this.Load += new System.EventHandler(this.UcProjectManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -375,16 +385,14 @@
         private System.Windows.Forms.TextBox txtProjectID;
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Button btnView;
-        private System.Windows.Forms.Button btnDelet;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label l2;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.TextBox txtEnd;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtStart;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.Label label5;
@@ -392,5 +400,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker dtEnd;
+        private System.Windows.Forms.DateTimePicker dtStart;
     }
 }

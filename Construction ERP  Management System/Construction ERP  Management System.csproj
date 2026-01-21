@@ -61,6 +61,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PasswordHelper.cs" />
+    <Compile Include="ProjectService.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="SignUpService.cs" />
     <Compile Include="UcCompanySetup.cs">
