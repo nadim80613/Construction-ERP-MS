@@ -384,5 +384,10 @@ namespace Construction_ERP__Management_System
                LoadUsersByCompany(Session.CompanyID);
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -40,10 +40,10 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(329, 38);
+            this.lblTitle.Location = new System.Drawing.Point(329, 26);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(277, 26);
+            this.lblTitle.Size = new System.Drawing.Size(413, 41);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Construction ERP System";
             this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
@@ -53,38 +53,39 @@
             this.cmbSignUpAs.FormattingEnabled = true;
             this.cmbSignUpAs.Location = new System.Drawing.Point(167, 27);
             this.cmbSignUpAs.Name = "cmbSignUpAs";
-            this.cmbSignUpAs.Size = new System.Drawing.Size(359, 30);
+            this.cmbSignUpAs.Size = new System.Drawing.Size(359, 40);
             this.cmbSignUpAs.TabIndex = 4;
             this.cmbSignUpAs.SelectionChangeCommitted += new System.EventHandler(this.cmbSignUpAs_SelectionChangeCommitted);
             // 
             // grpCompany
             // 
             this.grpCompany.Controls.Add(this.cmbSignUpAs);
-            this.grpCompany.Location = new System.Drawing.Point(80, 87);
+            this.grpCompany.Location = new System.Drawing.Point(63, 72);
             this.grpCompany.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.grpCompany.Name = "grpCompany";
             this.grpCompany.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.grpCompany.Size = new System.Drawing.Size(809, 73);
+            this.grpCompany.Size = new System.Drawing.Size(946, 73);
             this.grpCompany.TabIndex = 2;
             this.grpCompany.TabStop = false;
             this.grpCompany.Text = "SignUp as ";
             // 
             // panelMain
             // 
-            this.panelMain.Location = new System.Drawing.Point(0, 168);
+            this.panelMain.Location = new System.Drawing.Point(63, 153);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1005, 623);
+            this.panelMain.Size = new System.Drawing.Size(946, 429);
             this.panelMain.TabIndex = 3;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnBack.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBack.Location = new System.Drawing.Point(538, 796);
+            this.btnBack.Location = new System.Drawing.Point(921, 11);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(68, 28);
+            this.btnBack.Size = new System.Drawing.Size(88, 39);
             this.btnBack.TabIndex = 13;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -92,10 +93,10 @@
             // 
             // frmSignUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1005, 826);
+            this.ClientSize = new System.Drawing.Size(1064, 587);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.grpCompany);
@@ -103,6 +104,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "frmSignUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUpForm";
             this.Load += new System.EventHandler(this.frmSignUp_Load);
             this.grpCompany.ResumeLayout(false);

@@ -51,7 +51,22 @@ namespace Construction_ERP__Management_System
                 MessageBox.Show("Company + Admin Created Successfully!\nYour CompanyID: " + companyId);
             }
         }
-     }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 
        
  }
