@@ -74,6 +74,16 @@ namespace Construction_ERP__Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Construction_materials_mood_board {
+            get {
+                object obj = ResourceManager.GetObject("Construction materials mood board", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rsz_0b9c5eecc4df2eb1ed1db6aec9537a53 {
             get {
                 object obj = ResourceManager.GetObject("rsz_0b9c5eecc4df2eb1ed1db6aec9537a53", resourceCulture);

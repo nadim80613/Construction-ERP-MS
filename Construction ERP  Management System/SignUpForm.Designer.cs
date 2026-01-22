@@ -61,7 +61,7 @@
             // grpCompany
             // 
             this.grpCompany.Controls.Add(this.cmbSignUpAs);
-            this.grpCompany.Location = new System.Drawing.Point(63, 72);
+            this.grpCompany.Location = new System.Drawing.Point(16, 67);
             this.grpCompany.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.grpCompany.Name = "grpCompany";
             this.grpCompany.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -72,7 +72,7 @@
             // 
             // panelMain
             // 
-            this.panelMain.Location = new System.Drawing.Point(63, 153);
+            this.panelMain.Location = new System.Drawing.Point(16, 147);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(946, 429);
             this.panelMain.TabIndex = 3;
@@ -97,7 +97,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1064, 587);
+            this.ClientSize = new System.Drawing.Size(1041, 606);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.grpCompany);
