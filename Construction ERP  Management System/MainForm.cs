@@ -36,14 +36,20 @@ namespace Construction_ERP__Management_System
         {
             string user = "";
             string roleText = "";
-            string company = "";
+            string companyIdText = "";
+            string companyNameText = "";
 
             if (Session.UserName != null)
                 user = Session.UserName;
             else
                 user = "";
 
-            company = Session.CompanyID.ToString();
+            companyIdText = Session.CompanyID.ToString();
+
+            if (Session.CompanyName != null && Session.CompanyName.Trim() != "")
+                companyNameText = Session.CompanyName;
+            else
+                companyNameText = "";
 
             if (Session.IsSuperAdmin())
             {
@@ -74,7 +80,11 @@ namespace Construction_ERP__Management_System
                 }
             }
 
-            lblUserInfo.Text = "User: " + user + " | Role: " + roleText + " | Company: " + company;
+            lblUserInfo.Text =
+                "User: " + user +
+                " | Role: " + roleText +
+                " | Company ID: " + companyIdText +
+                " | Company Name: " + companyNameText;
         }
 
         private void MainForm_Load(object sender, EventArgs e)

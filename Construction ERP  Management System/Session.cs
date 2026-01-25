@@ -10,6 +10,7 @@ namespace Construction_ERP__Management_System
     {
         public static int UserID { get; set; }
         public static int CompanyID { get; set; }
+        public static string CompanyName { get; set; }
         public static string UserName { get; set; }
         public static string Email { get; set; }
         public static string Role { get; set; }

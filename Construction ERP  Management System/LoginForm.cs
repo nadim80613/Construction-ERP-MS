@@ -78,7 +78,7 @@ namespace Construction_ERP__Management_System
 
             using (SqlConnection con = DbConnection.GetConnection())
             {
-                string sql = @"SELECT UserID,CompanyID,Name,Role,Status,PasswordHash FROM Users WHERE Email=@Email";
+                string sql = @"SELECT u.UserID, u.CompanyID, u.Name, u.Role, u.Status, u.PasswordHash, c.Name AS CompanyName FROM dbo.Users u INNER JOIN dbo.Companies c ON c.CompanyID = u.CompanyID WHERE u.Email=@Email";
 
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@Email", email);
@@ -109,21 +109,21 @@ namespace Construction_ERP__Management_System
 
                 string role = reader["Role"].ToString();
                 string name = reader["Name"].ToString();
-                string companyID = reader["CompanyID"].ToString();
+                int companyID = Convert.ToInt32(reader["CompanyID"]);
+                string companyName = reader["CompanyName"].ToString();
 
                 MessageBox.Show("Welcome!" + name);
 
-                //Session set
                 Session.UserID = Convert.ToInt32(reader["UserID"]);
-                Session.CompanyID = Convert.ToInt32(companyID);
+                Session.CompanyID = companyID;
                 Session.UserName = name;
                 Session.Email = email;
                 Session.Role = role;
+                Session.CompanyName = companyName;
 
                 frmMain fm = new frmMain();
                 fm.Show();
                 this.Hide();
-
             }
 
 
